@@ -1,6 +1,9 @@
 # My Coding Adventures
 
-Benvenuto nella mia collezione di progetti sviluppati durante il mio percorso universitario e personale, utilizzando JavaScript e la libreria [p5.js](https://p5js.org/). Questo repository raccoglie simulazioni, esperimenti visivi e piccole esplorazioni interattive pensate per comprendere meglio concetti di fisica, matematica e comportamento emergente. Crediti all'incredibile youtuber Sebastian Lague -> https://www.youtube.com/@SebastianLague
+Benvenuto nella mia collezione di progetti sviluppati durante il mio percorso universitario e personale, utilizzando JavaScript e la libreria [p5.js](https://p5js.org/). Questo repository raccoglie simulazioni, esperimenti visivi e piccole esplorazioni interattive pensate per approfondire concetti di fisica, matematica e comportamento emergente.
+
+Un ringraziamento speciale va all’incredibile youtuber [Sebastian Lague](https://www.youtube.com/@SebastianLague), a cui ho "rubato" il nome del progetto. La sua serie *Coding Adventure* rappresenta perfettamente lo spirito di esplorazione creativa: imparare i fondamenti della matematica e della programmazione costruendo da zero, anche senza esperienza.
+
 
 ## Cosa trovi qui
 
