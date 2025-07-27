@@ -6,6 +6,8 @@ let luna;
 
 massaTerra = 100;
 raggioTerra = massaTerra / 2;
+vInizialeTerra = 0.005;  //0.005
+vInizialeLuna = 1.2;
 
  // CREO LA STRUTTURA DI UNA STELLA
 class Stella {
@@ -102,8 +104,6 @@ function setup() {
   let massaLuna = massaTerra / 81;
   let raggioLuna = raggioTerra / 3.7;
   let distanzaLuna = (80) * 3;
-  let vInizialeTerra = 0.005;  //0.005
-  let vInizialeLuna = 1.2
 
 
   let xTerra = width / 2;

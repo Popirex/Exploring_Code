@@ -1,0 +1,114 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Tema generale */
+  body {
+    background-color: #1A1A1D;
+    color: #DADADA;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Contenitore principale */
+  .content {
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  /* Titoli */
+  h1{
+    color: #89b9f0;
+    margin-bottom: 1rem;
+  }
+
+  h2{
+    color: #e9bcbc;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    color: #6A1E55;
+    margin-bottom: 30px;
+  }
+  
+  h3 {
+    color: #7B8D93;
+    margin-bottom: 30px;
+  }
+  
+  /* Paragrafi */
+  p {
+    color: #FFFAEC;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .titolo-spiegazione {
+    color: 	#A64D79;
+  }
+  
+
+  iframe {
+  display: block;
+  margin: 2rem auto;
+  margin-left: calc(30% - 400px + -30px); 
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #7cbdf1; 
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3; 
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.immagine {
+  width: 300px;
+  height: auto;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.immagine:hover {
+  transform: scale(1.1);
+}
+
+.github-logo {
+  width: 50px;
+  height: auto;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.github-logo:hover {
+  transform: scale(1.2);
+}

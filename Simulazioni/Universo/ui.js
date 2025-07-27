@@ -1,22 +1,28 @@
 const resetButton = document.getElementById("resetButton");
 const sliderMassa = document.getElementById("massa_terra");
+const sliderVelocitaTerra = document.getElementById("velocita_terra");
+const sliderVelocitaLuna = document.getElementById("velocita_luna");
 
 
 resetButton.addEventListener("click", () => {
   
-  const valore_slider = sliderMassa.value;
+  const valore_sliderMassa = parseFloat(sliderMassa.value);
 
-  console.log(valore_slider);
+  const valore_sliderTerra = parseFloat(sliderVelocitaTerra.value);
+  const valore_sliderLuna = parseFloat(sliderVelocitaLuna.value);
 
-    if (isNaN(valore_slider)) {
-    valore_slider = 100;
+
+    if (isNaN(valore_sliderMassa) || isNaN(valore_sliderTerra) || isNaN(valore_sliderLuna)) {
+    valore_sliderMassa = 100;
+    valore_sliderTerra = 0.005;
+    valore_sliderLuna = 1.2;
     alert("Inserisci valori validi.");
     return;
   }
 
 
   // AGGIORNO LE VARIABILI LOCALI CON GLI INPUT DELLA UI
-  massaTerra = valore_slider;
+  massaTerra = valore_sliderMassa;
   raggioTerra = massaTerra / 2;
 
   // RESETTO I CONTATORI PER LE NUOVE PERCENTUALI AL TERMINE DELLA SIMULAZIONE
@@ -26,8 +32,8 @@ resetButton.addEventListener("click", () => {
   let massaLuna = massaTerra / 81;
   let raggioLuna = raggioTerra / 3.7;
   let distanzaLuna = (80) * 3;
-  let vInizialeTerra = 0.005;  //0.005
-  let vInizialeLuna = 1.2
+  vInizialeTerra = valore_sliderTerra;  //0.005
+  vInizialeLuna = valore_sliderLuna;
 
 
   let xTerra = 400;

@@ -11,7 +11,7 @@ class Boid{
         this.maxForza = 10;
         this.maxAccellerazione = 10;
         this.maxCoesione = 0.2;
-        this.percezione = 200;
+        this.percezione = 100;
         this.maxVel = 10;
         this.raggio =  50;
     }
@@ -64,7 +64,7 @@ class Boid{
         for(let uccello of stormo){
             let d =  dist(this.pos.x, this.pos.y, uccello.pos.x, uccello.pos.y);
             if(uccello != this && d <= this.percezione){
-                if(sliderStato.value()){
+                if(sliderConnessioni.value()){
                     strokeWeight(0.2);
                     stroke(255);
                     line(this.pos.x , this.pos.y ,uccello.pos.x , uccello.pos.y);
