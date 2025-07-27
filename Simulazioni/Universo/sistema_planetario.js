@@ -1,6 +1,12 @@
 const G = 1;
 let slider;
 
+let terra;
+let luna;
+
+massaTerra = 100;
+raggioTerra = massaTerra / 2;
+
  // CREO LA STRUTTURA DI UNA STELLA
 class Stella {
   constructor(x , y, raggio){
@@ -93,8 +99,6 @@ function setup() {
   createCanvas(800, 800);
   frameRate(120);
   //DATI DEI DUE PIANETI
-  let massaTerra = 14*35;
-  let raggioTerra = 50;
   let massaLuna = massaTerra / 81;
   let raggioLuna = raggioTerra / 3.7;
   let distanzaLuna = (80) * 3;
@@ -119,6 +123,8 @@ function setup() {
 }
 
 function draw() {
+
+  console.log(massaTerra),
 
 
   background(0);
