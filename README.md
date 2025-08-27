@@ -1,38 +1,47 @@
-# My Coding Adventures
+# Exploring Code
 
-Benvenuto nella mia collezione di progetti sviluppati durante il mio percorso universitario e personale, utilizzando JavaScript e la libreria [p5.js](https://p5js.org/). Questo repository raccoglie simulazioni, esperimenti visivi e piccole esplorazioni interattive pensate per approfondire concetti di fisica, matematica e comportamento emergente.
+Welcome to my collection of projects developed during my university and personal journey, using JavaScript and the [p5.js](https://p5js.org/) library.  
+This repository gathers simulations, visual experiments, and small interactive explorations designed to dive into concepts from physics, mathematics, and emergent behavior.
 
-Un ringraziamento speciale va all’incredibile youtuber [Sebastian Lague](https://www.youtube.com/@SebastianLague), a cui ho "rubato" il nome del progetto. La sua serie *Coding Adventure* rappresenta perfettamente lo spirito di esplorazione creativa: imparare i fondamenti della matematica e della programmazione costruendo da zero, anche senza esperienza. Consiglio vivamente di andare a guardare il suo canale se non lo conoscete e vi interessa l'argomento.
-
-
-## Cosa trovi qui
-
-- **Simulazioni fisiche**  
-  Come la simulazione di un sistema planetario semplificato, dove è possibile modificare parametri come massa e velocità dei corpi celesti.
-
-- **Comportamenti emergenti**  
-  Come il modello dei *Boids*, una rappresentazione realistica del comportamento collettivo di stormi di uccelli, basata sulle tre regole di Craig Reynolds: allineamento, coesione e separazione.
-
-- **Esperimenti visivi**  
-  Sketch grafici e interazioni creative pensati per esplorare visivamente algoritmi o concetti scientifici.
-
-## Obiettivo
-
-Il mio obiettivo è imparare creando. Ogni progetto nasce da una domanda o una curiosità, ed è pensato come una piccola sfida per consolidare concetti appresi nei corsi di informatica, matematica e fisica.
-
-## Tecnologie usate
-
-- [p5.js](https://p5js.org/) – Per la grafica e l'interattività
-- JavaScript – Per la logica e il comportamento dei sistemi simulati
-- HTML/CSS – Per la struttura e lo stile delle pagine
-
-
-##  Autore
-
-**Popirex**  
-Studente di informatica, appassionato di simulazioni, fisica computazionale e grafica interattiva.  
-Se vuoi contattarmi o vedere altri miei lavori, visita il mio [GitHub profile](https://github.com/Popirex).
+A special thanks goes to the incredible YouTuber [Sebastian Lague](https://www.youtube.com/@SebastianLague). His *Coding Adventure* series perfectly captures the spirit of creative exploration: learning the foundations of math and programming by building from scratch. I highly recommend checking out his channel if you don’t already know it and you’re interested in these topics.
 
 ---
 
-Grazie per aver visitato questo repository! Se ti piacciono i progetti, sentiti libero di lasciare una ⭐.
+## What You’ll Find Here
+
+- **Physics Simulations**  
+  For example, a simplified planetary system simulation where you can tweak parameters like mass and velocity of celestial bodies.
+
+- **Emergent Behaviors**  
+  Such as the *Boids* model — a realistic representation of flocking behavior in birds, based on Craig Reynolds’ three rules: alignment, cohesion, and separation.
+
+- **Visual Experiments**  
+  Graphic sketches and creative interactions designed to visually explore algorithms or scientific concepts.
+
+---
+
+## Goal
+
+My goal is to learn by creating.  
+Each project starts with a question or curiosity and becomes a small challenge to strengthen my understanding of computer science, math, and physics.
+
+---
+
+## Technologies Used
+
+- [p5.js](https://p5js.org/) – For graphics and interactivity  
+- JavaScript – For system logic and behavior  
+- HTML/CSS – For structure and styling  
+
+---
+
+## Author
+
+**Popirex**  
+Computer science student, passionate about simulations, computational physics, and interactive graphics.  
+If you’d like to get in touch or explore more of my work, visit my [GitHub profile](https://github.com/Popirex).
+
+---
+
+Thanks for visiting this repository! If you enjoy the projects, feel free to leave a ⭐.
+
