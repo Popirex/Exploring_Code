@@ -4,10 +4,10 @@ let sliderAllinea, sliderCoesione, sliderRepulsione, sliderConnessioni;
 function setup() {
   createCanvas(larghezza, altezza);
 
-  creaSliderEtichettato("Allineamento", 0, 1, 0.5, 0.01);
-  creaSliderEtichettato("Coesione", 0, 5, 1, 0.1);
-  creaSliderEtichettato("Repulsione", 0, 5, 2.5, 0.1);
-  creaSliderEtichettato("Connessioni", 0, 1, 0, 1);
+  creaSliderEtichettato("Alignment", 0, 1, 0.5, 0.01);
+  creaSliderEtichettato("Cohesion", 0, 5, 1, 0.1);
+  creaSliderEtichettato("Repulsion", 0, 5, 2.5, 0.1);
+  creaSliderEtichettato("Connections", 0, 1, 0, 1);
 
   for (let i = 0; i < 100; i++) {
     stormo.push(new Boid());
@@ -37,9 +37,9 @@ function creaSliderEtichettato(etichetta, min, max, val, step) {
   slider.parent(container);
 
   switch (etichetta) {
-    case "Allineamento": sliderAllinea = slider; break;
-    case "Coesione": sliderCoesione = slider; break;
-    case "Repulsione": sliderRepulsione = slider; break;
-    case "Connessioni": sliderConnessioni = slider; break;
+    case "Alignment": sliderAllinea = slider; break;
+    case "Cohesion": sliderCoesione = slider; break;
+    case "Repulsion": sliderRepulsione = slider; break;
+    case "Connections": sliderConnessioni = slider; break;
   }
 }

@@ -91,6 +91,10 @@
   font-size: 16px;
 }
 
+.author a{
+  color: white;
+}
+
 .immagine {
   width: 300px;
   height: auto;
@@ -112,3 +116,34 @@
 .github-logo:hover {
   transform: scale(1.2);
 }
+
+.home{
+  width: 70px;
+  height: 25px;
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.home a{
+  color: white;
+}
+
+.home:hover{
+  background-color: #002b59;
+}
+
+.home a:hover {
+  color: white;
+}
+
+a {
+  color: #7cbdf1;
+}
+
+a:hover {
+  color: #0456ad;
+}
+

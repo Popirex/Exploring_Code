@@ -8,42 +8,46 @@
 
   </head>
   <body>
-    <main>
-    </main>
-    <script src="sistema_planetario.js"></script>
 
-    <label for="massa_terra">Scegli la massa della Terra</label>&nbsp
-    <input type="range" id="massa_terra" name="massa_terra" min="1" max="200" step="1" >
-    <br>
-    <label for="velocita_terra">Scegli la velocita della Terra</label>&nbsp
-    <input type="range" id="velocita_terra" name="velocita_terra" min="0.001" max="0.3" step="0.0001"  value="0.005">
-    <br>
-    <label for="velocita_luna">Scegli la velocita della Luna</label>
-    <input type="range" id="velocita_luna" name="velocita_luna" min="0.001" max="2" step="0.0001" value="1.2" >
-    <br>
+    <section class="home">
+      <a href="../../index.html">Home</a>
+    </section>
 
-    <button id="resetButton">Resetta la simulazione</button>
+    <header>
+      <h1>
+        Creating Gravity in a Computer
+      </h1>
+      </header>
 
-    <script src="ui.js"></script>
 
-    <br>
-    <br>
+      <section>
+        <h1>Simulation context</h1>
+        <p>
+          This simulation shows a simplified model of the Earth-Moon system, using gravity to demonstrate how mass and speed affect the orbit. With interactive sliders, you can change the parameters and watch the orbits update in real time, helping you intuitively understand the physics behind them.
+        </p>
 
-    <h1>Contesto:</h1>
-    <p>
-  Questa simulazione rappresenta un modello semplificato del sistema Terra-Luna, 
-  che utilizza le leggi della gravitazione per mostrare come la massa e la velocità 
-  influenzino il moto orbitale. Grazie all'interattività degli slider, è possibile 
-  modificare i parametri e osservare in tempo reale gli effetti sulle orbite, 
-  favorendo una comprensione intuitiva dei principi fisici coinvolti.
-</p>
+        <p>
+          This was the first simulation I made, aiming to show a physical phenomenon in a somewhat realistic way. Working with the laws of gravity was especially fascinating, and I encourage anyone curious about a scientific concept to try making their own simulations. Of course, the simulation isn’t fully accurate when it comes to collisions between celestial bodies—simulating the formation of new planets is beyond my current skills—but I hope you enjoy the idea and the approach behind it.
+        </p>
+      </section>
 
-<p>
-  Si tratta della prima simulazione che ho realizzato con l’obiettivo di rappresentare un fenomeno fisico in modo quasi realistico. L’implementazione delle leggi gravitazionali è stata particolarmente interessante, e consiglio a chiunque sia curioso di approfondire un concetto scientifico di cimentarsi nella creazione di simulazioni simili.  
-  Naturalmente, la simulazione non è del tutto accurata per quanto riguarda la collisione tra i corpi celesti: simulare la formazione di nuovi pianeti va oltre le mie attuali competenze. Spero comunque che possiate apprezzarne l’intento e l’approccio.
-</p>
 
-<span>- Popirex</span>
+      
+        <script src="sistema_planetario.js"></script>
+
+        <label for="massa_terra">Choose the Earth’s mass</label>&nbsp
+        <input type="range" id="massa_terra" name="massa_terra" min="1" max="200" step="1" >
+        <br>
+        <label for="velocita_terra">Choose the Earth’s speed</label>&nbsp
+        <input type="range" id="velocita_terra" name="velocita_terra" min="0.001" max="0.3" step="0.0001"  value="0.005">
+        <br>
+        <label for="velocita_luna">Choose the Moon’s speed</label>
+        <input type="range" id="velocita_luna" name="velocita_luna" min="0.001" max="2" step="0.0001" value="1.2" >
+        <br>
+
+        <button id="resetButton">Restart Simulation</button>
+
+        <script src="ui.js"></script>
 
 
 
