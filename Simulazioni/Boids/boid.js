@@ -22,9 +22,13 @@ class Boid{
 
 
     show(){
-        strokeWeight(10);
-        stroke(50);
-        point(this.pos.x, this.pos.y);
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.vel.heading());
+        fill(50);
+        noStroke();
+        triangle(0, -5, 0, 5, 15, 0);
+        pop();
     }
 
 
