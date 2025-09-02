@@ -147,3 +147,22 @@ a:hover {
   color: #0456ad;
 }
 
+.update h1{
+  font-size: 2rem;
+  color: #ff772d;
+}
+
+.update h4{
+  color: #be0088;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.update a{
+  color: #ff772d;
+}
+
+.update a:hover {
+  color: #e73200;
+}
+

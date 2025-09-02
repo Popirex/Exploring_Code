@@ -1,6 +1,6 @@
 let altezza = 750;
 let larghezza = 750;
-let  magnitudine_velocita = 20;
+let  magnitudine_velocita = 10;
 
 
 class Boid{
@@ -14,6 +14,10 @@ class Boid{
         this.percezione = 100;
         this.maxVel = 10;
         this.raggio =  50;
+
+        //tentativo 1 di implementazione hash table per interazioni tra oggetti->
+
+        this.vicini = [];
     }
 
 
