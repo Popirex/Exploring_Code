@@ -2,7 +2,7 @@
 let cellSize = 30;
 let grid = new Map();
 
-let numeroPrede = 200;
+let numeroPrede = 300;
 let numeroPredatori = 3;
 
 let distanzaContatto = 5; //sotto i 5px si toccano
@@ -50,8 +50,8 @@ class Body {
     constructor(){
 
         this.maxForza = magnitudine_velocita / 2;
-        if(this instanceof Boid){this.maxVel = magnitudine_velocita / 5;}
-        else if(this instanceof Enemy){this.maxVel = magnitudine_velocita / 3;}
+        if(this instanceof Boid){this.maxVel = magnitudine_velocita / 3;}
+        else if(this instanceof Enemy){this.maxVel = magnitudine_velocita / 2;}
         this.maxAccelerazione = magnitudine_velocita / 2;
 
         this.pos = createVector( random(0, width), random(0, height));
