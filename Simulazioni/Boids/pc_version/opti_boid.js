@@ -50,8 +50,8 @@ class Body {
     constructor(){
 
         this.maxForza = magnitudine_velocita / 2;
-        if(this instanceof Boid){this.maxVel = magnitudine_velocita / 2;}
-        else if(this instanceof Enemy){this.maxVel = magnitudine_velocita / 3;}
+        if(this instanceof Boid){this.maxVel = magnitudine_velocita / 3;}
+        else if(this instanceof Enemy){this.maxVel = magnitudine_velocita / 2;}
         this.maxAccelerazione = magnitudine_velocita / 2;
 
         this.pos = createVector( random(0, width), random(0, height));
@@ -116,10 +116,16 @@ class Body {
     push();
     translate(this.pos.x, this.pos.y);
     rotate(this.vel.heading());
-    if(this instanceof Boid) fill(70);
-    else if(this instanceof Enemy) fill(255, 0 , 0); 
-    noStroke();
-    triangle(0, -5, 0, 5, 15, 0);
+    if(this instanceof Boid){ 
+        fill(70);
+        noStroke();
+        triangle(0, -5, 0, 5, 15, 0);
+    }
+    else if(this instanceof Enemy){
+        fill(255, 0 , 0); 
+        noStroke();
+        triangle(0, -10, 0, 10, 20, 0);
+    }
     pop();
     }
 
@@ -273,10 +279,10 @@ class Enemy extends Body{
                 }
 
                 if(distanza <= distanzaContatto){
-                    if(i > -1){
-                        boids.splice(i, 1); 
+                    let indice = boids.indexOf(this.vicini[i]);
+                    if(indice > -1){
+                        boids.splice(indice, 1); 
                     }
-
                     this.vicini.splice(i, 1);
                 }
             }
@@ -310,6 +316,7 @@ function setup(){
 }
 
 function draw(){
+    
     background('#6db3e8');
 
 

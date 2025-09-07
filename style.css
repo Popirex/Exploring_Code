@@ -166,3 +166,26 @@ a:hover {
   color: #e73200;
 }
 
+.Back {
+  width: 20%;
+  height: 3%;
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+  font-size: 2rem;
+}
+
+.Back a{
+  color: white;
+}
+
+.Back:hover{
+  background-color: #002b59;
+}
+
+.Back a:hover {
+  color: white;
+}
+
