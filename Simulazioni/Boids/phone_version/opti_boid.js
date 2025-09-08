@@ -3,7 +3,8 @@ let cellSize = 30;
 let grid = new Map();
 
 let numeroPrede = 300;
-let numeroPredatori = 3;
+let numeroPredatori = 5;
+let numeroCibo = 5;
 
 let distanzaContatto = 5; //sotto i 5px si toccano
 
@@ -75,13 +76,15 @@ class Body {
 
         this.inFrame();
 
+
+
         if(this instanceof Boid){
             this.applicaForze(grid);
         }
         else if(this instanceof Enemy){
             this.caccia(grid);
         }
-        
+
 
         this.vel.lerp(this.vel.copy().add(this.acc), 0.2);
 
@@ -139,6 +142,7 @@ class Boid extends Body {
         this.allineamento = createVector();
         this.coesione = createVector();
         this.repulsione = createVector();
+        this.attrazioneCibo = createVector();
 
         this.fuga = createVector();
 
@@ -146,9 +150,13 @@ class Boid extends Body {
         this.pesoCoesione = 0.01 ;
         this.pesoRepulsione = 1.5;
         this.pesoFuga = 2;
+        this.pesoCibo = 3;
 
         this.percezione = 100;
-        this.percezioneNemici = 300;
+        this.percezioneNemici = 200;
+
+        this.percezioneCibo = 300;
+        this.distanzaPasto = 15;
 
 
     }
@@ -160,10 +168,12 @@ class Boid extends Body {
         //variabili locali
 
         let totale = 0;
+        let amici = 0;
         this.allineamento.set(0 , 0);
         this.coesione.set(0 , 0);
         this.repulsione.set(0 , 0);
         this.fuga.set(0, 0);
+        this.attrazioneCibo.set(0, 0);
 
         for(let vicino of this.vicini){
 
@@ -186,6 +196,7 @@ class Boid extends Body {
                     differenza.setMag(forza);
                     this.repulsione.add(differenza);
 
+                    amici++;
                     totale++;
 
                 }
@@ -200,18 +211,43 @@ class Boid extends Body {
 
                     differenza.setMag(forza);
                     this.fuga.add(differenza);
+
+                    totale++;
                 }
+            }
+            else if(vicino instanceof Food){
+                let distanza_cibo = dist(this.pos.x, this.pos.y, vicino.pos.x, vicino.pos.y);
+
+                if(distanza_cibo <= this.distanzaPasto ){
+                    vicino.mangiato = 1;
+                    continue;
+                }
+                else if(distanza_cibo <= this.percezioneCibo){
+
+                    let direzione = p5.Vector.sub(vicino.pos, this.pos);
+                    direzione.setMag(this.maxVel);
+                    direzione.sub(this.vel);
+                    direzione.limit(this.maxForza);
+
+                    this.attrazioneCibo.add(direzione);
+                    totale++;
+
+                    
+                }
+
             }
         }
 
         if(totale > 0){
 
-            this.allineamento.div(totale);
+            if(amici == 0) amici = 1;
+
+            this.allineamento.div(amici);
             this.allineamento.setMag(this.maxVel);
             this.allineamento.sub(this.vel);
             this.allineamento.limit(this.maxForza);
 
-            this.coesione.div(totale);
+            this.coesione.div(amici);
             this.coesione.sub(this.pos);
             this.coesione.setMag(this.maxVel);
             this.coesione.sub(this.vel);
@@ -222,11 +258,14 @@ class Boid extends Body {
 
             
 
+            this.acc.add(this.attrazioneCibo.mult(this.pesoCibo));
+
             this.acc.add(this.allineamento.mult(this.pesoAllineamento));
             this.acc.add(this.coesione.mult(this.pesoCoesione));
             this.acc.add(this.repulsione.mult(this.pesoRepulsione));
 
             this.acc.add(this.fuga.mult(this.pesoFuga));
+
         }
     }
 
@@ -264,6 +303,8 @@ class Enemy extends Body{
 
             let distanza = dist(this.pos.x, this.pos.y, this.vicini[i].pos.x, this.vicini[i].pos.y);
 
+            if(this.vicini[i] instanceof Food) continue;
+
             if(this.vicini[i] instanceof Boid){
 
                 if(distanza <= this.percezionePrede && distanza > distanzaContatto){
@@ -296,11 +337,42 @@ class Enemy extends Body{
     }
 }
 
+class Food {
+    constructor(){
+        this.pos = createVector( random(0, width), random(0, height));
+        this.c = random(0, 360);
+        
+        this.r = 15;
+
+        this.mangiato = 0;
+    }
+
+    spawna(){
+        
+        colorMode(HSB);
+        fill(this.c, 100 , 100 );
+        ellipse(this.pos.x, this.pos.y, this.r, this.r);
+        colorMode(RGB);
+        if(this.mangiato){
+            this.respawna();
+        }
+        
+    }
+
+    respawna(){
+        this.pos = createVector(random(width), random(height));
+        this.mangiato = 0;
+        this.c = random(0, 360);
+    }
+}
+
 
 let boids = [];
 let predators = [];
+let food = [];
 
-let oggetti = [ boids, predators];
+
+let oggetti = [ boids, predators, food];
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -312,12 +384,22 @@ function setup(){
         predators[j] = new Enemy();
     }
 
+    for(let k = 0; k < numeroCibo; k++){
+        food[k] = new Food();
+    }
+
 
 }
 
+
 function draw(){
+
+
     
     background('#6db3e8');
+
+
+    
 
 
 
@@ -326,6 +408,10 @@ function draw(){
 
     for(let gruppo of oggetti){
         for(let oggetto of gruppo){
+            if(oggetto instanceof Food){
+                oggetto.spawna();
+                continue;
+            }
             oggetto.muovi(grid);
             oggetto.disegna();
         }
