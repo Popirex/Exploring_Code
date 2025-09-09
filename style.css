@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   
   /* Tema generale */
   body {
@@ -24,15 +25,25 @@
     max-width: 900px;
     width: 100%;
   }
+
+  .content p {
+    font-size: 1.4rem;
+  }
+
+  .content h1{
+    color: #89b9f0;
+    font-size: 1.4rem;
+  }
+  
   
   /* Titoli */
   h1{
-    color: #89b9f0;
+    color: #ff7700;
     margin-bottom: 1rem;
   }
 
   h2{
-    color: #e9bcbc;
+    color: #89b9f0;
     margin-bottom: 1rem;
   }
 
@@ -42,7 +53,7 @@
   }
   
   h3 {
-    color: #7B8D93;
+    color: #89b9f0;
     margin-bottom: 30px;
   }
   
@@ -83,6 +94,7 @@
 }
 
 .author {
+  color: #ff7700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,7 +104,13 @@
 }
 
 .author a{
-  color: white;
+  color: #ff7700;
+}
+
+
+.author a:hover{
+  color: #ffa85c;
+
 }
 
 .immagine {
@@ -189,3 +207,46 @@ a:hover {
   color: white;
 }
 
+
+.boids_titolo {
+
+  color: #ff7700;
+}
+
+.contesto p{
+  font-size: 1.4rem;
+  margin: 0% 10% 0% 10%;
+}
+
+.iterazione {
+  margin: 0% 10% 0% 10%;
+}
+
+.iterazione h2{
+  font-size: 1.5rem;
+  color:  #89b9f0;
+}
+
+.iterazione p{
+  font-size: 1.4rem;
+}
+
+#titolo_iterazione_1{
+  color: #4DB6AC;
+}
+
+#titolo_iterazione_2 {
+  color: #009688;
+}
+
+#titolo_iterazione_3 {
+  color: #00796B;
+}
+
+#titolo_iterazione_4 {
+  color:#004D40;
+}
+
+footer p{
+  color: #ff7700;
+}

@@ -14,9 +14,12 @@
     </section>
     
 
+
       <header>
-        <h1>Simulating Bird Flocks with Boids</h1>
+        <h1>Simple Rules to Complex Flocks</h1>
       </header>
+
+      <!--
 
       <section class="simulazione">
 
@@ -24,53 +27,86 @@
         <script src="index.js"></script>
 
       </section>
-
+    -->
       <section class="contesto">
 
-        <h1>Context:</h1>
+        <p>
+          This page documents my journey in experimenting with the Boids model, 
+          a classic algorithm introduced by Craig Reynolds in 1986 to simulate 
+          the collective behavior of birds, fish, and other swarming creatures. 
+          Starting from the three fundamental rules — alignment, cohesion, and separation — 
+          I gradually built more complex versions, adding features, optimizations, 
+          and new interactions step by step.
+        </p>
 
         <p>
-          This simulation is based on the Boids model (from English “boids,” short for “bird-oid objects”), developed in 1986 by Craig Reynolds, a pioneer in computer graphics. Its goal was to realistically reproduce the collective behavior of flocks of birds, schools of fish, or swarms of insects, using simple rules applied to individual autonomous agents.
-        <br><br>
-        The emergent flocking behavior arises from the interaction of three fundamental rules:
-        <br>
-        -<strong>Alignment</strong> (tend to move in the same direction as nearby agents). <br>
-        -<strong>Cohesion</strong> (move closer to other group members). <br>
-        -<strong>Repulsion</strong> (avoid collisions by maintaining a minimum distance).  <br>
-        <br><br>
-        In this simulation, you can observe and adjust the flock’s behavior using dedicated sliders, experimenting in real time with how small parameter changes affect collective dynamics. Additionally, there is a slider that, when activated, shows the connections between a “bird” and others within a 100-pixel radius. This is a clear example of how complex phenomena can emerge from very simple local rules.
+          Below, you can explore each iteration in chronological order, 
+          seeing how small modifications can completely transform the dynamics of the system. 
+          Each section contains a live simulation along with a short explanation of the changes introduced.
         </p>
 
 
       </section>
 
-      <section class="update">
-        <h1>Update - September 7, 2025</h1>
-
+      <section class="iterazione">
+        <h2 id="titolo_iterazione_1">Iteration 1 – Basic Boids</h2>
+        <a href="iterazione_1/index.html"><img src="../../immagini/boids.png" alt="first iteration image" class="immagine"></a>
         <p>
-          On September 2, I had already updated this page with a new simulation that used a hash table to optimize performance. 
+          This first version implements the three original Boids rules: alignment, cohesion, and separation. 
+          The result already shows emergent flocking behavior from very simple local interactions.
         </p>
-
-        <p>
-          However, the other night I was watching a documentary and saw a scene where a shark swam into a huge school of small fish. I noticed behaviors that, in my opinion, could be fully reproduced in a simulation like this. 
-        </p>
-
-        <p>
-          Inspired by this, I decided to rewrite the entire program from scratch to better handle the interactions between predators and prey. The updated version is available at the link below.
-        </p>
-
-        <p>
-          Link for Pc: <a href="pc_version/index.html">Updated Version</a>
-        </p>
-
-        <p>
-          Link for Phone: <a href="phone_version/index.html">Updated Version</a>
-        </p>
-
-        <h4>
-          * Please note that parameters cannot be modified. To offer a better experience for both type of users I've added a phone & pc version link to optimize device performance.   *
-        </h4>
       </section>
+
+      <section class="iterazione">
+        <h2 id="titolo_iterazione_2">Iteration 2 – Optimizing with a Spatial Hash Table</h2>
+        <a href="iterazione_2/index.html"><img src="../../immagini/iterazione_2.png" alt="second iteration image" class="immagine"></a>
+        
+        <p>
+          In this version, I introduced a spatial hash table to efficiently handle 
+          neighborhood detection. Instead of checking every agent against all others, 
+          each Boid only searches within its assigned grid cell and the surrounding ones. 
+          This drastically reduces the number of distance calculations, allowing 
+          smoother performance and enabling larger flock sizes without slowing down 
+          the simulation.
+        </p>
+
+
+      </section>
+
+      <section class="iterazione">
+        <h2 id="titolo_iterazione_3">Iteration 3 – Predators and Prey Dynamics</h2>
+        <a href="iterazione_3/index.html"><img src="../../immagini/iterazione_3.png" alt="third iteration image" class="immagine"></a>
+        
+        <p>
+          In this version, I introduced predators into the system. When no prey is in sight, 
+          predators wander with random directions, but as soon as they detect a prey, 
+          they immediately start chasing it. Predators do not recognize each other — 
+          their vision is focused solely on the prey. Once a predator catches one, it 
+          grows in size but becomes slower, creating a balance between power and agility. 
+          This simple rule set generates tense and dynamic predator–prey interactions, 
+          adding another layer of realism to the simulation.
+        </p>
+
+
+      </section>
+
+      <section class="iterazione">
+        <h2 id="titolo_iterazione_4">Iteration 4 – Food Sources and Prey Aging</h2>
+        <a href="iterazione_4/index.html"><img src="../../immagini/iterazione_4.png" alt="fourth iteration image" class="immagine"></a>
+        
+        <p>
+          In this step, I introduced food sources for the prey. When prey eat, 
+          they grow in size and become slower, similar to predators after catching 
+          a target. Additionally, I implemented an aging effect: prey start completely 
+          black, and with each meal they gradually turn lighter. Once a prey reaches 
+          pure white, it dies and disappears from the simulation. 
+          This new cycle adds both resource management and a natural sense of 
+          life progression to the system, making the flocking behavior even more 
+          dynamic and unpredictable.
+        </p>
+
+      </section>
+
     
       <footer><p>By - Popirex</p></footer>
 

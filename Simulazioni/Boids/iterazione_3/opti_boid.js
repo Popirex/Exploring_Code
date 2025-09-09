@@ -1,10 +1,10 @@
 // variabili globali
-let cellSize = 30;
+let cellSize = 50;
 let grid = new Map();
 
-let numeroPrede = 300;
-let numeroPredatori = 5;
-let numeroCibo = 5;
+let numeroPrede = 600;
+let numeroPredatori = 10;
+let numeroCibo = 0;
 
 let distanzaContatto = 5; //sotto i 5px si toccano
 
@@ -51,14 +51,18 @@ class Body {
     constructor(){
 
         this.maxForza = magnitudine_velocita / 2;
-        if(this instanceof Boid){this.maxVel = magnitudine_velocita / 3;}
-        else if(this instanceof Enemy){this.maxVel = magnitudine_velocita / 2;}
+        this.punteggio = 0; // tenere conto di quanti oggetti hanno mangiato. - cerco di farlo funzionare sia per predatore -> preda , che per preda -> cibo ; con questa stessa variabile
+
+        if(this instanceof Boid){this.maxVel = magnitudine_velocita;}
+        else if(this instanceof Enemy){this.maxVel = magnitudine_velocita;}
         this.maxAccelerazione = magnitudine_velocita / 2;
 
         this.pos = createVector( random(0, width), random(0, height));
         this.vel = p5.Vector.random2D().mult(random(1, this.maxVel / 2));
         this.acc = createVector();
 
+        this.c = 0;
+        
         
 
         this.vicini = [];
@@ -120,14 +124,14 @@ class Body {
     translate(this.pos.x, this.pos.y);
     rotate(this.vel.heading());
     if(this instanceof Boid){ 
-        fill(70);
+        fill(this.c + (20*this.punteggio));
         noStroke();
-        triangle(0, -5, 0, 5, 15, 0);
+        triangle(0, -5 - (1*this.punteggio), 0, 5 + (1*this.punteggio), 15 + (2*this.punteggio), 0);
     }
     else if(this instanceof Enemy){
         fill(255, 0 , 0); 
         noStroke();
-        triangle(0, -10, 0, 10, 20, 0);
+        triangle(0, -5 - (1*this.punteggio), 0, 5 + (1*this.punteggio), 15 + (2*this.punteggio), 0);
     }
     pop();
     }
@@ -220,6 +224,8 @@ class Boid extends Body {
 
                 if(distanza_cibo <= this.distanzaPasto ){
                     vicino.mangiato = 1;
+                    this.punteggio++;
+                    this.maxVel = magnitudine_velocita / ( 1 + (0.4 *  this.punteggio)) ;
                     continue;
                 }
                 else if(distanza_cibo <= this.percezioneCibo){
@@ -325,6 +331,9 @@ class Enemy extends Body{
                         boids.splice(indice, 1); 
                     }
                     this.vicini.splice(i, 1);
+                    this.punteggio++;
+                    this.maxVel = magnitudine_velocita / ( 1 + (0.4 *  this.punteggio)) ;
+                    
                 }
             }
         }
@@ -394,17 +403,9 @@ function setup(){
 
 function draw(){
 
-
-    
     background('#6db3e8');
 
-
-    
-
-
-
     aggiornaGriglia(oggetti);
-
 
     for(let gruppo of oggetti){
         for(let oggetto of gruppo){
