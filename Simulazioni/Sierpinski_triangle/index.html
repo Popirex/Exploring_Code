@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stile.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    
+
+    <title>Sierpiński triangle by Popirex</title>
+</head>
+<body>
+    <header>
+        <h3>My attempt at the</h3>
+        <h1>Sierpiński triangle</h1>
+    </header>
+
+    <section>
+
+        <p>Today I decided to make an attempt at the Sierpiński triangle fractal using the <strong>Chaos Game</strong> algorithm.</p>
+        <p>The idea behind this algorithm is extraordinarily simple! Starting from a random point inside the triangle, repeatedly jump halfway to a random vertex. Despite the apparent randomness, a beautiful fractal pattern emerges.</p>
+    </section>
+
+<section class="simulazione">
+    <div id="container-simulazione"></div>
+</section>
+
+<section class="algorithm">
+        <h2>How it works</h2>
+        <ol>
+            <li>Take three points in a plane to form a triangle</li>
+            <li>Randomly select any point inside the triangle (your starting position)</li>
+            <li>Randomly select one of the three vertices</li>
+            <li>Move halfway from your current position to the selected vertex</li>
+            <li>Plot the new position</li>
+            <li>Repeat from step 3</li>
+        </ol>
+    </section>
+
+    <section class="code-explanation">
+        <h2>Implementation challenges</h2>
+        <p>The trickiest part was determining if a randomly generated point falls inside the triangle. I used <strong>barycentric coordinates</strong> for this:</p>
+        <p>Given a point P and triangle vertices A, B, C, we calculate three weights (λ₁, λ₂, λ₃). If all three are non-negative, the point is inside!</p>
+    </section>
+
+
+    
+</body>
+
+<script src="sierpinskiTriangle.js"></script>
+</html>
