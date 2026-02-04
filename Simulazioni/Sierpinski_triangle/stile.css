@@ -100,6 +100,28 @@ section.simulazione {
   transition: var(--transition);
 }
 
+.home{
+  width: 70px;
+  height: 25px;
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.home a{
+  color: white;
+}
+
+.home:hover{
+  background-color: #002b59;
+}
+
+.home a:hover {
+  color: white;
+}
+
 section.simulazione:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0, 173, 181, 0.25);
