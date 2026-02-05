@@ -100,27 +100,6 @@ section.simulazione {
   transition: var(--transition);
 }
 
-.home{
-  width: 70px;
-  height: 25px;
-  position: fixed;
-  right: 10px;
-  top: 20px;
-  background-color: #0056b3;
-  border-radius: 20px;
-}
-
-.home a{
-  color: white;
-}
-
-.home:hover{
-  background-color: #002b59;
-}
-
-.home a:hover {
-  color: white;
-}
 
 section.simulazione:hover {
   transform: translateY(-5px);
@@ -191,6 +170,28 @@ section.code-explanation {
   header {
     padding: 40px 20px 30px;
   }
+
+  .home{
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.home a{
+  text-decoration: none;
+  color: white;
+}
+
+.home:hover{
+  background-color: #002b59;
+}
+
+.home a:hover {
+  color: white;
+}
+
 }
 
 @media (max-width: 480px) {
@@ -202,4 +203,27 @@ section.code-explanation {
     width: 100% !important;
     height: auto !important;
   }
+}
+
+
+.home{
+
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.home a{
+  text-decoration: none;
+  color: white;
+}
+
+.home:hover{
+  background-color: #002b59;
+}
+
+.home a:hover {
+  color: white;
 }

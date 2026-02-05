@@ -137,7 +137,6 @@
 
 .home{
   width: 70px;
-  height: 25px;
   position: fixed;
   right: 10px;
   top: 20px;
@@ -146,6 +145,7 @@
 }
 
 .home a{
+  text-decoration: none;
   color: white;
 }
 
@@ -249,4 +249,30 @@ a:hover {
 
 footer p{
   color: #ff7700;
+}
+
+
+@media only screen{
+  .home{
+  width: 100px;
+  height: auto;
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.home a{
+  text-decoration: none;
+  color: white;
+}
+
+.home:hover{
+  background-color: #002b59;
+}
+
+.home a:hover {
+  color: white;
+}
 }
