@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="../Sierpinski_triangle/stile.css">
+    <title>Mandelbrot Set by Popirex</title>
+</head>
+<body>
+    <section class="home">
+        <a href="../../index.html">Home</a>
+    </section>
+    <header>
+        <h3>My attempt at the</h3>
+        <h1>Mandelbrot Set</h1>
+    </header>
+    
+    <section>
+        <p>This is my personal attempt at recreating what is probably the most famous fractal ever: the <strong>Mandelbrot Set</strong>.</p>
+        <p>The beauty of this fractal lies in its infinite complexity emerging from a deceptively simple mathematical rule. No matter how far you zoom in, you'll always find new intricate patterns.</p>
+    </section>
+
+    <section class="simulazione">
+        <div id="container-simulazione"></div>
+    </section>
+
+    <section class="algorithm">
+        <h2>The simple idea behind it</h2>
+        <p>The Mandelbrot set is based on a surprisingly simple formula involving <strong>complex numbers</strong>:</p>
+        <p style="text-align: center; font-size: 1.3rem; margin: 25px 0;">
+            <strong>z<sub>n+1</sub> = z<sub>n</sub>² + c</strong>
+        </p>
+        <p>Here's what happens:</p>
+        <ol>
+            <li>Start with <strong>z = 0</strong></li>
+            <li>Pick a point <strong>c</strong> on the complex plane (each pixel represents a different c)</li>
+            <li>Apply the formula repeatedly: square the current value and add c</li>
+            <li>If the value stays bounded (doesn't shoot off to infinity), that point is <strong>in the set</strong> (colored black)</li>
+            <li>If it escapes to infinity, color it based on <strong>how quickly it escaped</strong></li>
+        </ol>
+        <p>The colorful regions show points that escape, with colors indicating the speed of escape. The black region is the actual Mandelbrot set!</p>
+    </section>
+
+    <section class="code-explanation">
+        <h2>Implementation challenges</h2>
+        <p>The main challenge was <strong>mapping pixels to complex numbers</strong>. Each pixel (x, y) on the screen needs to correspond to a complex number c = a + bi on the complex plane.</p>
+        <p>I had to scale the pixel coordinates to fit the interesting region of the Mandelbrot set (roughly -2 to 1 on the real axis, -1.5 to 1.5 on the imaginary axis).</p>
+        <p>Another challenge was determining the <strong>escape condition</strong>: how many iterations before we decide a point has escaped? Too few iterations and you miss detail; too many and the rendering slows down significantly.</p>
+    </section>
+
+</body>
+<script src="simulazioneMandelbrot.js"></script>
+</html>
