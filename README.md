@@ -40,7 +40,7 @@ This is my favorite! Based on Craig Reynolds' legendary algorithm, this simulati
 ---
 
 ### Mandelbrot Set Explorer
-![Mandelbrot Set](immagini/mandelbrot.png)
+![Mandelbrot Set](immagini/mandelbrot-set.png)
 
 Dive into the infinite beauty of fractals! This interactive visualization lets you see the Mandelbrot set and discover the self-similar patterns that go on forever. It's hypnotic and a great way to appreciate the mathematical beauty hiding in complex numbers.
 
@@ -49,7 +49,7 @@ Dive into the infinite beauty of fractals! This interactive visualization lets y
 ---
 
 ### Sierpiński Triangle (Chaos Game)
-![Sierpinski Triangle](immagini/sierpinski.png)
+![Sierpinski Triangle](immagini/foto-triangolo.png)
 
 Another fractal, this time created using the Chaos Game algorithm. Start with a random point, pick a random vertex, move halfway toward it, and repeat. Sounds random, right? But somehow this chaotic process creates the beautiful Sierpiński triangle pattern. Math is WILD.
 
