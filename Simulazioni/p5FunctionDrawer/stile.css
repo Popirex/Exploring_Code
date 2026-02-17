@@ -5,27 +5,28 @@
     text-align: center;
 }
 
-
-.home{
-
-  position: fixed;
-  right: 10px;
-  top: 20px;
-  background-color: #0056b3;
-  border-radius: 20px;
+.home {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    padding: 8px 16px;
+    background-color: #0056b3;
+    border-radius: 20px;
+    z-index: 100;
 }
 
-.home a{
-  text-decoration: none;
-  color: white;
+.home a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
 }
 
-.home:hover{
-  background-color: #002b59;
+.home:hover {
+    background-color: #002b59;
 }
 
 .home a:hover {
-  color: white;
+    color: white;
 }
 
 body {
@@ -36,9 +37,8 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    overflow-x: hidden;
 }
-
-
 
 header {
     width: 100%;
@@ -53,13 +53,20 @@ header h1 {
     letter-spacing: 2px;
 }
 
-
+/* Canvas */
 
 .canvas {
     padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #canvas-container {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border: 2px solid #0f3460;
     border-radius: 4px;
     overflow: hidden;
@@ -67,6 +74,8 @@ header h1 {
 
 #canvas-container canvas {
     display: block;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 hr {
@@ -76,7 +85,7 @@ hr {
     margin: 8px 0;
 }
 
-
+/* Display */
 
 .display-funzione {
     padding: 10px 20px;
@@ -97,7 +106,7 @@ hr {
     color: #e94560;
 }
 
-
+/* Buttons */
 
 .pulsanti {
     width: 100%;
@@ -171,7 +180,7 @@ hr {
     border-color: #f0b429;
 }
 
-
+/* Slider */
 
 .scala {
     width: 100%;
@@ -197,7 +206,7 @@ hr {
     height: 4px;
 }
 
-
+/* Informations */
 
 .informations {
     width: 100%;
@@ -231,7 +240,7 @@ hr {
     color: #e0e0e0;
 }
 
-
+/* Footer */
 
 footer {
     width: 100%;
@@ -282,20 +291,43 @@ footer .container {
     color: #555;
 }
 
-
+/* Mobile */
 
 @media (max-width: 480px) {
+    .home {
+        top: 8px;
+        right: 8px;
+        padding: 6px 12px;
+    }
+
+    .home a {
+        font-size: 0.85rem;
+    }
+
+    header {
+        padding: 12px;
+    }
+
     header h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .canvas {
         padding: 12px;
     }
 
+    .display-funzione {
+        padding: 8px 12px;
+    }
+
+    .display-funzione h3 {
+        font-size: 1rem;
+    }
+
     .pulsanti {
         padding: 8px;
         gap: 5px;
+        max-width: 100%;
     }
 
     .pulsanti button {
@@ -310,40 +342,48 @@ footer .container {
     }
 
     .scala {
-        padding: 12px 16px;
+        padding: 12px;
+        max-width: 100%;
+    }
+
+    .scala h4 {
+        font-size: 0.85rem;
     }
 
     .informations {
-        padding: 20px 16px;
+        padding: 16px 12px;
+        max-width: 100%;
+    }
+
+    .informations h3 {
+        font-size: 0.95rem;
     }
 
     .informations p {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
+    }
+
+    footer {
+        padding: 20px 12px;
     }
 
     .footer-links {
         gap: 14px;
     }
-
-     .home{
-  position: fixed;
-  right: 10px;
-  top: 20px;
-  background-color: #0056b3;
-  border-radius: 20px;
 }
 
-.home a{
-  text-decoration: none;
-  color: white;
-}
+@media (max-width: 360px) {
+    .canvas {
+        padding: 8px;
+    }
 
-.home:hover{
-  background-color: #002b59;
-}
+    .pulsanti {
+        padding: 6px;
+        gap: 4px;
+    }
 
-.home a:hover {
-  color: white;
-}
-
+    .pulsanti button {
+        padding: 10px 2px;
+        font-size: 0.85rem;
+    }
 }
