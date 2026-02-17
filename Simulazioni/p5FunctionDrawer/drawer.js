@@ -73,9 +73,11 @@ function setup() {
 function draw() {
   leggiSlider();
   background(220);
+  text("scale: "+ scala + "x", 340, 390);
   translate(width/2, height/2);
-  scale(1 , -1);
   DrawAxis();
+  scale(scala , - (scala));
+
   
   strokeWeight(1);
   stroke(255, 0 , 0);
@@ -86,7 +88,7 @@ function draw() {
     for(let x = -width/2; x <= width/2; x++){
         
         try {
-               let y = eval(espressione) * scala;
+               let y = eval(espressione);
                 vertex(x, y); 
         } catch (error) {
             corretto = false;
