@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="stile.css">
+    <title>Function Drawer - Popirex</title>
+</head>
+<body>
+
+    <section class="home">
+      <a href="../../index.html">Home</a>
+    </section>
+
+    <header>
+        <h1>
+            Popirex Graphic Calculator
+        </h1>
+    </header>
+
+
+    <section class="canvas">
+        <div id="canvas-container"></div>
+    </section>
+
+    <hr>
+
+    <section class="display-funzione" style=" white-space: nowrap;">
+        <h3>f(x)=<span id="display"></span></h3>
+    </section>
+
+    <hr>
+
+    <section class="pulsanti">
+        <button class="math-button" data-value="x">x</button>
+        <button class="math-button" data-value="1">1</button>
+        <button class="math-button" data-value="2">2</button>
+        <button class="math-button" data-value="3">3</button>
+        <button class="math-button" data-value="4">4</button>
+        <button class="math-button" data-value="5">5</button>
+        <button class="math-button" data-value="6">6</button>
+        <button class="math-button" data-value="7">7</button>
+        <button class="math-button" data-value="8">8</button>
+        <button class="math-button" data-value="9">9</button>
+        <button class="math-button" data-value="0">0</button>
+        <button class="math-button" data-value="sin">sin</button>
+        <button class="math-button" data-value="cos">cos</button>
+        <button class="math-button" data-value="tan">tan</button>
+        <button class="math-button" data-value="+">+</button>
+        <button class="math-button" data-value="-">-</button>
+        <button class="math-button" data-value="*">*</button>
+        <button class="math-button" data-value="/">/</button>
+        <button class="math-button" data-value="(">(</button>
+        <button class="math-button" data-value=")">)</button>
+        <button id="uguale">=</button>
+        <button id="clear">C</button>
+        <button id="canc">←</button>
+    </section>
+
+    <section class="scala">
+        <h4>Slider to adjust the scale: </h4>
+        <input id="slider" type="range" min="1" max="50" value="1" step="0.1">
+    </section>
+
+    <section class="informations">
+
+        <h3>How to use</h3>
+        <p>Type your function using the buttons, then press <strong>=</strong> to draw it. Remember to always put an operator between elements (no implicit multiplication) and to close all brackets.</p>
+        <p>Use the slider to adjust the scale — it's especially useful for trigonometric functions like sin and cos, which would otherwise appear completely flat.</p>
+
+        <h3>How it was born</h3>
+        <p>I've wanted to make something like Desmos for years, but always assumed it was way beyond my skill level. Turns out I could have done it ages ago — it's surprisingly simple once you actually sit down and try.</p>
+        <p>I finally had the time and motivation to do it, so here it is. It's probably not going to be useful to anyone, but I had a lot of fun building it.</p>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-name">Popirex</p>
+            <p class="footer-tagline">Computer Science Student • Maker</p>
+            
+            <div class="footer-links">
+                <a href="mailto:rossi04alessandro@gmail.com">Email</a>
+                <a href="https://github.com/Popirex" target="_blank">GitHub</a>
+                <a href="https://popirex.github.io" target="_blank">Portfolio</a>
+            </div>
+            
+            <p class="footer-copyright">Built with curiosity and iteration • 2024-2026</p>
+        </div>
+    </footer>
+    
+</body>
+<script src="drawer.js"></script>
+</html>

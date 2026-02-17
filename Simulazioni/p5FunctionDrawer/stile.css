@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.home{
+
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.home a{
+  text-decoration: none;
+  color: white;
+}
+
+.home:hover{
+  background-color: #002b59;
+}
+
+.home a:hover {
+  color: white;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+header {
+    width: 100%;
+    padding: 16px;
+    background-color: #16213e;
+    border-bottom: 2px solid #0f3460;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    color: #e94560;
+    letter-spacing: 2px;
+}
+
+
+
+.canvas {
+    padding: 20px;
+}
+
+#canvas-container {
+    border: 2px solid #0f3460;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#canvas-container canvas {
+    display: block;
+}
+
+hr {
+    width: 90%;
+    border: none;
+    border-top: 1px solid #0f3460;
+    margin: 8px 0;
+}
+
+
+
+.display-funzione {
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 440px;
+}
+
+.display-funzione h3 {
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: #aaa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.display-funzione h3 #display {
+    color: #e94560;
+}
+
+
+
+.pulsanti {
+    width: 100%;
+    max-width: 440px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.pulsanti button {
+    font-family: monospace;
+    font-size: 1rem;
+    color: #e0e0e0;
+    background-color: #16213e;
+    border: 1px solid #0f3460;
+    border-radius: 4px;
+    padding: 14px 8px;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.pulsanti button:hover {
+    background-color: #0f3460;
+    color: #fff;
+}
+
+.pulsanti button:active {
+    background-color: #e94560;
+    color: #fff;
+}
+
+.math-button[data-value="x"] {
+    color: #e94560;
+}
+
+.math-button[data-value="sin"],
+.math-button[data-value="cos"],
+.math-button[data-value="tan"] {
+    font-size: 0.85rem;
+    color: #a0c4ff;
+}
+
+#uguale {
+    background-color: #0f3460;
+    color: #e94560;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#uguale:hover {
+    background-color: #e94560;
+    color: #fff;
+}
+
+#clear {
+    color: #ff6b6b;
+}
+
+#clear:hover {
+    background-color: #3a1520;
+    border-color: #ff6b6b;
+}
+
+#canc {
+    color: #f0b429;
+}
+
+#canc:hover {
+    background-color: #2e2810;
+    border-color: #f0b429;
+}
+
+
+
+.scala {
+    width: 100%;
+    max-width: 440px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scala h4 {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: normal;
+}
+
+.scala input[type="range"] {
+    width: 100%;
+    max-width: 320px;
+    accent-color: #e94560;
+    cursor: pointer;
+    height: 4px;
+}
+
+
+
+.informations {
+    width: 100%;
+    max-width: 440px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #0f3460;
+}
+
+.informations h3 {
+    font-size: 1rem;
+    color: #e94560;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+.informations h3:first-child {
+    margin-top: 0;
+}
+
+.informations p {
+    font-size: 0.88rem;
+    color: #aaa;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.informations p strong {
+    color: #e0e0e0;
+}
+
+
+
+footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 24px 16px;
+    background-color: #16213e;
+    border-top: 2px solid #0f3460;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-name {
+    font-size: 1rem;
+    color: #e94560;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-tagline {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    margin: 6px 0;
+}
+
+.footer-links a {
+    color: #a0c4ff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.15s;
+}
+
+.footer-links a:hover {
+    color: #e94560;
+}
+
+.footer-copyright {
+    font-size: 0.75rem;
+    color: #555;
+}
+
+
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    .canvas {
+        padding: 12px;
+    }
+
+    .pulsanti {
+        padding: 8px;
+        gap: 5px;
+    }
+
+    .pulsanti button {
+        padding: 12px 4px;
+        font-size: 0.9rem;
+    }
+
+    .math-button[data-value="sin"],
+    .math-button[data-value="cos"],
+    .math-button[data-value="tan"] {
+        font-size: 0.75rem;
+    }
+
+    .scala {
+        padding: 12px 16px;
+    }
+
+    .informations {
+        padding: 20px 16px;
+    }
+
+    .informations p {
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        gap: 14px;
+    }
+
+     .home{
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.home a{
+  text-decoration: none;
+  color: white;
+}
+
+.home:hover{
+  background-color: #002b59;
+}
+
+.home a:hover {
+  color: white;
+}
+
+}
