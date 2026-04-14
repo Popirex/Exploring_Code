@@ -6,6 +6,10 @@ const display = document.getElementById("display");
 
 const bottoni = document.querySelectorAll(".math-button");
 
+function getMax(){
+    return width > height ? width : height;
+}
+
 
 function leggiSlider(){
     scala = document.getElementById("slider").value;
@@ -57,11 +61,33 @@ document.getElementById("canc").addEventListener("click", function(){
     }
 });
 
+function DrawTicks(){
+    push();
+    strokeWeight(0.1);
+    stroke(0);
 
+    // disegno quelle in posizione 1 piu piccole
+    line(1, -0.5, 1, 0.5);
+    line(-1, -0.5, -1, 0.5);
+    line(-0.5, -1, 0.5, -1);
+    line(-0.5, 1, 0.5, 1);
+
+    for(let i = 2; i <= getMax(); i++ ){
+        
+        line(i, -1, i, 1);
+        line(-i, -1, -i, 1);
+        line(-1, -i, 1, -i);
+        line(-1, i, 1, i);
+    }
+
+  pop();
+}
 
 function DrawAxis(){
   line(0, -height/2, 0, height/2);
   line( -width/2, 0, width/2, 0 );
+
+
 }
 
 function setup() {
@@ -77,6 +103,7 @@ function draw() {
   translate(width/2, height/2);
   DrawAxis();
   scale(scala , - (scala));
+  DrawTicks();
 
   
   strokeWeight(1);
@@ -85,7 +112,7 @@ function draw() {
   beginShape();
   noFill();
   if(corretto){
-    for(let x = -width/2; x <= width/2; x++){
+    for(let x = -width/2; x <= width/2; x+=0.1){
         
         try {
                let y = eval(espressione);
